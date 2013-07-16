@@ -1,0 +1,66 @@
+<html>
+<head>
+<script>
+function validateForm() {
+
+  var x=document.forms["myForm"]["firstname"].value;
+	if (x==null || x=="")
+ 	{
+ 	alert("First name must be filled out");
+ 	}
+
+	var x=document.forms["myForm"]["emailid"].value;
+	if (x==null || x=="")
+ 	{
+ 	alert("E-mail id must be filled out");
+ 	}
+
+	var x=document.forms["myForm"]["pwd"].value;
+	if (x==null || x=="")
+	{
+ 	alert("Password must be filled out");
+ 	}
+
+	var x=document.forms["myForm"]["email"].value;
+	var atpos=x.indexOf("@");
+	var dotpos=x.lastIndexOf(".");
+	if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+	{
+        alert("Not a valid e-mail address");
+        return false;
+        }
+}
+</script>
+</head>
+
+<body>
+<h1 style="text-align:centre;"> Welcome to Registration</h1>
+<form>
+
+	<form name="myForm" action="www.ngp clg.com" onsubmit="return validateForm()" method="post">
+
+	First name: <input type="text" name="firstname"><br>
+
+	Last name: <input type="text" name="lastname"><br>
+
+	Email-id: <input type="text" name="emailid"><br>
+
+	Password: <input type=""password" name="pwd"><br>
+
+	Date of birth: <input type="text" size="10"><br>
+
+	<input type="radio" name="sex" value="male">Male<br>
+
+	<input type="radio" name="sex" value="female">Female<br>
+
+	Address: <input type="textarea" rows="10" cols="30"><br>
+
+        <input type="checkbox" name="room" value="Accomodation">I require a room<br>
+
+	<input type="checkbox" name="terms & conditions" value="Accept">I accept the Terms & Conditions<br>
+
+	<input type="submit" value="Submit">
+
+</form>
+</body>
+</html>
